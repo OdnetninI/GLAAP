@@ -10,14 +10,13 @@
 namespace GE {
   // Namespace for Display Things
   namespace Display {
-    static const uint16_t WIDTH = 1280;
-    static const uint16_t HEIGHT = 720;
-
     // Basic Window Class
     class Window {
       private:
         sf::RenderWindow window;                // sfml window object
         std::vector<Drawable*> objects;   // draw object list
+        uint16_t width = 1280;
+        uint16_t height = 720;
 
       public:
         Window();
@@ -26,6 +25,10 @@ namespace GE {
 
         void update();
         void render();
+
+        void checkForClose();
+        bool isOpen();
+        void close();
 
     }; // Window
 

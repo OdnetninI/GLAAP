@@ -2,7 +2,10 @@
 
 int main (int argc, char* argv[]) {
   GE::Display::Window window;
-  window.render();
-  sf::sleep(sf::seconds(10));
+  
+  while(window.isOpen()) {
+    window.checkForClose();
+    window.render();
+  }
   return 0;
 }
