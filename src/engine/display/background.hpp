@@ -11,9 +11,22 @@ namespace GE {
       private:
         sf::Vector2i position; // Use for scrolling or moving
         sf::Texture* texture;  // Texture cache (No need to call resource handler every step)
-        sf::Vector2u size;     // Background Size 
 
       public:
+        BackGround() = default;
+
+        // Position Set
+        void setPosition (const sf::Vector2i& position);
+        void setPosition (int x, int y);
+
+        // Set a Texture
+        void setTexture (const sf::Texture* texture);
+
+        // Visible Rectangle
+        void setVisible (const sf::IntRect& rect);
+        void setVisible (const sf::Vector2i& p1, const sf::Vector2i& p2);
+        void setVisible (int x1, int y1, int x2, int y2);
+
         // Redefine Draw
         void draw(const sf::RenderWindow& window);
 
