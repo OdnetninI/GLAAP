@@ -12,6 +12,10 @@ namespace GE {
 
     }
 
+    void Window::addObject(const Drawable* obj) {
+      this->objects.push_back(obj);
+    }
+
     void Window::render() {
       this->window.clear(sf::Color::Black);
 

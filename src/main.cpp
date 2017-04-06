@@ -26,8 +26,15 @@ int main (int argc, char* argv[]) {
   texturemng.remove("1");
   std::cout << "Number of Textures: " << texturemng.size() << std::endl;
 
+  GE::Display::Background bg;
+  texturemng.add("1", "file.png");
+  bg.setTexture(texturemng.get("1"));
+  bg.setPosition(50,-160);
+  bg.setVisibleArea(sf::IntRect(20,30,200,300));
+
   while(window.isOpen()) {
     window.checkForClose();
+    window.addObject(&bg);
     window.render();
   }
   return 0;

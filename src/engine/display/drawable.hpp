@@ -11,7 +11,7 @@ namespace GE {
     // Drawable Interface
     class Drawable {
       public:
-        virtual void draw(const sf::RenderWindow& window) = 0;
+        virtual void draw(sf::RenderWindow& window) const = 0;
 
     }; // Drawable
 

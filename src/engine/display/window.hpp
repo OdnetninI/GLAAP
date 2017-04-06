@@ -14,7 +14,7 @@ namespace GE {
     class Window {
       private:
         sf::RenderWindow window;                // sfml window object
-        std::vector<Drawable*> objects;   // draw object list
+        std::vector<const Drawable*> objects;   // draw object list
         uint16_t width = 1280;
         uint16_t height = 720;
 
