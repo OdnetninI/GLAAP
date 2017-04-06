@@ -1,7 +1,16 @@
 #include "engine/core.hpp"
 #include <iostream>
 
+#define TEST 1
+#if TEST == 1
+#include "test/test.hpp"
 int main (int argc, char* argv[]) {
+  launchTests();
+  return 0;
+}
+#else
+int main (int argc, char* argv[]) {
+
   GE::Display::Window window;
 
   GE::Resource::TextureManager texturemng;
@@ -39,3 +48,4 @@ int main (int argc, char* argv[]) {
   }
   return 0;
 }
+#endif
