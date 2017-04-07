@@ -1,7 +1,7 @@
 #include "engine/core.hpp"
 #include <iostream>
 
-#define TEST 1
+#define TEST 0
 #if TEST == 1
 #include "test/test.hpp"
 int main (int argc, char* argv[]) {
@@ -11,7 +11,7 @@ int main (int argc, char* argv[]) {
 #else
 int main (int argc, char* argv[]) {
 
-  GE::Display::Window window;
+  GE::Display::Window window(1);
 
   GE::Resource::TextureManager texturemng;
   texturemng.add("1", "file.png");
@@ -43,7 +43,7 @@ int main (int argc, char* argv[]) {
 
   while(window.isOpen()) {
     window.checkForClose();
-    window.addObject(&bg);
+    window.addObject(0,&bg);
     window.render();
   }
   return 0;

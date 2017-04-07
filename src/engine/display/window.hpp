@@ -14,14 +14,18 @@ namespace GE {
     class Window {
       private:
         sf::RenderWindow window;                // sfml window object
-        std::vector<const Drawable*> objects;   // draw object list
+        std::vector<const Drawable*> *objects;   // draw object list
         uint16_t width = 1280;
         uint16_t height = 720;
+        uint8_t layers = 5;
 
       public:
         Window();
+        Window(uint8_t layers);
+
+        ~Window();
         
-        void addObject(const Drawable* obj);
+        void addObject(uint8_t layer, const Drawable* obj);
 
         void update();
         void render();
