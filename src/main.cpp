@@ -42,6 +42,7 @@ int main (int argc, char* argv[]) {
   bg.setVisibleArea(sf::IntRect(20,30,200,300));
 
   while(window.isOpen()) {
+    bg.move(1,1);
     window.checkForClose();
     window.addObject(0,&bg);
     window.render();
